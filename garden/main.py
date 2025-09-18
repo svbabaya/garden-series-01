@@ -1,45 +1,33 @@
 from fastapi import FastAPI
 import uvicorn
-import routes
+
+from routes import api_plants, web_plants
+
 from core.config import settings
 
-from sqlalchemy.ext.asyncio import create_async_engine
+# from sqlalchemy.ext.asyncio import create_async_engine
 
-app = FastAPI()
+app = FastAPI(title="School Garden Learning Portal", version="1.0.0")
+
+# API routes
+app.include_router(api_plants.router, prefix="/api/plants", tags=["api-plants"])
+# app.include_router(api_admin.router, prefix="/api/admin", tags=["api-admin"])
+# app.include_router(api_auth.router, prefix="/api/auth", tags=["api-auth"])
+
+# Web routes
+app.include_router(web_plants.router, prefix="/plants", tags=["web-plants"])
+# app.include_router(web_admin.router, prefix="/admin", tags=["web-admin"])
+# app.include_router(web_auth.router, prefix="/auth", tags=["web-auth"])
 
 
 @app.get("/")
 async def index():
-    return [
-        {
-            "template": "index.html",
-            "category_list": [1, 2, 3, 4, 5],
-            "message": "Text of message",
-            "author": "Author of message",
-            "routes": "ToDo",
-        }
-    ]
+    return [{"template": "index.html"}]
 
 
-@app.get("/plants/{category_id}")
-async def get_category(category_id: int):
-    return [{"template": "category.html", "category_id": category_id, "routes": "ToDo"}]
-
-
-@app.get("/plants/{category_id}/{plant_id}")
-async def get_plant(category_id: int, plant_id: int):
-    return [
-        {
-            "template": "plant.html",
-            "category_id": category_id,
-            "plant_id": plant_id,
-            "routes": "ToDo",
-        }
-    ]
-
-
-app.include_router(api_router, prefix=settings.api.prefix)
-# app.include_router(api_router)
+# @app.get("/")
+# async def root(request: Request):
+#     return templates.TemplateResponse("index.html", {"request": request})
 
 if __name__ == "__main__":
     uvicorn.run(
