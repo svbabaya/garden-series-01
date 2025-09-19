@@ -8,16 +8,28 @@ class RunConfig(BaseModel):
 
 
 class Prefix(BaseModel):
-    public_api_prefix: str = "/api/"
-    admin_api_prefix: str = "/api/admin"
-    # public_template_prefix: str = "/garden"
-    # admin_template_prefix: str = "/garden/admin"
+    api_plants: str = "/api/plants"
+    api_admin: str = "/api/admin"
+    api_auth: str = "/api/auth"
+    web_plants: str = "/plants"
+    web_admin: str = "/admin"
+    web_auth: str = "/auth"
+
+
+class Tags:
+    api_plants: list[str] = ["api-plants"]
+    api_admin: list[str] = ["api-admin"]
+    api_auth: list[str] = ["api-auth"]
+    web_plants: list[str] = ["web-plants"]
+    web_admin: list[str] = ["web-admin"]
+    web_auth: list[str] = ["web-auth"]
 
 
 class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     prefix: Prefix = Prefix()
-    db_url: str = "sqlite+aiosqlite:///garden.sqlite"
+    tags: Tags = Tags()
+    # db_url: str = "sqlite+aiosqlite:///garden.sqlite"
 
 
 settings = Settings()
