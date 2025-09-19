@@ -32,7 +32,7 @@ app.include_router(
 # app.include_router(web_auth.router, deprecated=False, prefix=settings.prefix.web_auth, tags=settings.tags.web_auth)
 
 
-@app.get("/")
+@app.get("/", tags=["home"])
 async def index():
     return [{"template": "index.html"}]
 

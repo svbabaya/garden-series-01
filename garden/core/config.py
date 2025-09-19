@@ -29,7 +29,7 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
-    # db_url: str = "sqlite+aiosqlite:///garden.sqlite"
+    db_url: str = "sqlite+aiosqlite:///db.sqlite"
 
 
 settings = Settings()
