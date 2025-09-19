@@ -1,5 +1,8 @@
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent.parent
 
 
 class RunConfig(BaseModel):
@@ -29,7 +32,8 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
-    db_url: str = "sqlite+aiosqlite:///db.sqlite"
+    db_url: str = f"sqlite+aiosqlite:///{BASE_DIR}/db.sqlite"
+    db_echo: bool = True
 
 
 settings = Settings()

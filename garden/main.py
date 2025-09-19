@@ -1,3 +1,6 @@
+from contextlib import asynccontextmanager
+from models import Base, db_helper
+
 from fastapi import FastAPI
 import uvicorn
 
@@ -5,9 +8,20 @@ from routes import api_plants, web_plants
 
 from core.config import settings
 
-# from sqlalchemy.ext.asyncio import create_async_engine
 
-app = FastAPI(title="School Garden Learning Portal", version="1.0.0")
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    async with db_helper.engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+
+    yield
+
+
+app = FastAPI(
+    title="School Garden Learning Portal",
+    version="1.0.0",
+    lifespan=lifespan,
+)
 
 # API routes
 app.include_router(
@@ -36,10 +50,6 @@ app.include_router(
 async def index():
     return [{"template": "index.html"}]
 
-
-# @app.get("/")
-# async def root(request: Request):
-#     return templates.TemplateResponse("index.html", {"request": request})
 
 if __name__ == "__main__":
     uvicorn.run(
