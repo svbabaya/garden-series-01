@@ -4,7 +4,7 @@ from models import Base, db_helper
 from fastapi import FastAPI
 import uvicorn
 
-from routes import api_plants, web_plants
+from routes import api_plants, api_messages, web_plants
 
 from core.config import settings
 
@@ -31,6 +31,14 @@ app.include_router(
     tags=settings.tags.api_plants,
     responses={404: {"description": "Not found"}},
 )
+app.include_router(
+    api_messages.router,
+    deprecated=False,
+    prefix=settings.prefix.api_messages,
+    tags=settings.tags.api_messages,
+    responses={404: {"description": "Not found"}},
+)
+
 # app.include_router(api_admin.router, deprecated=False, prefix=settings.prefix.api_admin, tags=settings.tags.api_admin)
 # app.include_router(api_auth.router, deprecated=False, prefix=settings.prefix.api_auth, tags=settings.tags.api_auth)
 

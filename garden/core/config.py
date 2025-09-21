@@ -12,6 +12,7 @@ class RunConfig(BaseModel):
 
 class Prefix(BaseModel):
     api_plants: str = "/api/plants"
+    api_messages: str = "/api/messages"
     api_admin: str = "/api/admin"
     api_auth: str = "/api/auth"
     web_plants: str = "/plants"
@@ -21,6 +22,7 @@ class Prefix(BaseModel):
 
 class Tags:
     api_plants: list[str] = ["api-plants"]
+    api_messages: list[str] = ["api-messages"]
     api_admin: list[str] = ["api-admin"]
     api_auth: list[str] = ["api-auth"]
     web_plants: list[str] = ["web-plants"]
@@ -32,7 +34,7 @@ class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
-    db_url: str = f"sqlite+aiosqlite:///{BASE_DIR}/db.sqlite"
+    db_url: str = f"sqlite+aiosqlite:///{BASE_DIR}/db.sqlite3"
     db_echo: bool = True
 
 

@@ -1,5 +1,4 @@
-# from sqlalchemy.testing.schema import mapped_column
-
+from sqlalchemy.orm import Mapped
 from .base import Base
 from enum import Enum
 
@@ -9,7 +8,8 @@ class Mode(str, Enum):
 
 
 class Message(Base):
-    pass
-    # text: Mapped[str] = mapped_column()
-    # author: Mapped[str] = mapped_column()
-    # mode: Mapped[Mode] = mapped_column()
+    __tablename__ = "messages"
+
+    text: Mapped[str]
+    author: Mapped[str]
+    mode: Mapped[Mode]
