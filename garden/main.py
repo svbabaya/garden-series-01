@@ -24,13 +24,13 @@ app = FastAPI(
 )
 
 # API routes
-app.include_router(
-    api_plants.router,
-    deprecated=False,
-    prefix=settings.prefix.api_plants,
-    tags=settings.tags.api_plants,
-    responses={404: {"description": "Not found"}},
-)
+# app.include_router(
+#     api_plants.router,
+#     deprecated=False,
+#     prefix=settings.prefix.api_plants,
+#     tags=settings.tags.api_plants,
+#     responses={404: {"description": "Not found"}},
+# )
 app.include_router(
     api_messages.router,
     deprecated=False,
@@ -43,13 +43,14 @@ app.include_router(
 # app.include_router(api_auth.router, deprecated=False, prefix=settings.prefix.api_auth, tags=settings.tags.api_auth)
 
 # Web routes
-app.include_router(
-    web_plants.router,
-    deprecated=False,
-    prefix=settings.prefix.web_plants,
-    tags=settings.tags.web_plants,
-    responses={404: {"description": "Not found"}},
-)
+# app.include_router(
+#     web_plants.router,
+#     deprecated=False,
+#     prefix=settings.prefix.web_plants,
+#     tags=settings.tags.web_plants,
+#     responses={404: {"description": "Not found"}},
+# )
+
 # app.include_router(web_admin.router, deprecated=False, prefix=settings.prefix.web_admin, tags=settings.tags.web_admin)
 # app.include_router(web_auth.router, deprecated=False, prefix=settings.prefix.web_auth, tags=settings.tags.web_auth)
 
