@@ -29,13 +29,15 @@ class Tags:
     web_admin: list[str] = ["web-admin"]
     web_auth: list[str] = ["web-auth"]
 
+class DatabaseConfig:
+    url: str = f"sqlite+aiosqlite:///{BASE_DIR}/db.sqlite3"
+    echo: bool = True
 
 class Settings(BaseSettings):
     run: RunConfig = RunConfig()
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
-    db_url: str = f"sqlite+aiosqlite:///{BASE_DIR}/db.sqlite3"
-    db_echo: bool = True
+    db: DatabaseConfig = DatabaseConfig()
 
 
 settings = Settings()
