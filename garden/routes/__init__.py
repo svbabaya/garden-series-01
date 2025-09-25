@@ -4,7 +4,7 @@ from .api import (
 )  # , admin as api_admin, auth as api_auth
 from .web import plants as web_plants  # , admin as web_admin, auth as web_auth
 
-__all__ = [
+__all__ = (
     "api_plants",
     "api_messages",
     # 'api_admin',
@@ -12,4 +12,4 @@ __all__ = [
     "web_plants",
     # 'web_admin',
     # 'web_auth'
-]
+)

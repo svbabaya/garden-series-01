@@ -1,6 +1,6 @@
 from .message import Message, MessageCreate
 
-__all__ = [
+__all__ = (
     "Message",
     "MessageCreate",
-]
+)
