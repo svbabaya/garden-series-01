@@ -21,7 +21,7 @@ async def lifespan(app: FastAPI):
 main_app = FastAPI(
     title="School Garden Learning Portal",
     version="1.0.0",
-    # lifespan=lifespan,
+    lifespan=lifespan,
 )
 
 # API routes
