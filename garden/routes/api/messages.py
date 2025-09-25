@@ -9,7 +9,7 @@ router = APIRouter()
 
 @router.get("/", response_model=list[Message])
 async def get_messages(
-    session: AsyncSession = Depends(db_helper.session_dependency),
+    session: AsyncSession = Depends(db_helper.session_getter),
 ):
     return await crud.get_messages(session=session)
 
@@ -17,14 +17,14 @@ async def get_messages(
 @router.post("/", response_model=Message)
 async def create_message(
     message_in: MessageCreate,
-    session: AsyncSession = Depends(db_helper.session_dependency),
+    session: AsyncSession = Depends(db_helper.session_getter),
 ):
     return await crud.create_message(session=session, message_in=message_in)
 
 
 @router.get("/{message_id}", response_model=Message)
 async def get_message(
-    message_id: int, session: AsyncSession = Depends(db_helper.session_dependency)
+    message_id: int, session: AsyncSession = Depends(db_helper.session_getter)
 ):
     message = await crud.get_message(session=session, message_id=message_id)
     if message:

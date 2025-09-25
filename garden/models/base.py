@@ -4,6 +4,7 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, declared_attr
 class Base(DeclarativeBase):
     __abstract__ = True
 
+    # ToDo use converter camel_case_to_snake_case
     # @declared_attr.directive
     # def __tablename__(self) -> str:
     #     return f"{self.__name__.lower()}s"

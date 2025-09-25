@@ -1,4 +1,4 @@
-from sqlalchemy.orm import Mapped
+from sqlalchemy.orm import Mapped, mapped_column
 from .base import Base
 from enum import Enum
 
@@ -10,6 +10,6 @@ class Mode(str, Enum):
 class Message(Base):
     __tablename__ = "messages"
 
-    text: Mapped[str]
-    author: Mapped[str]
-    mode: Mapped[Mode]
+    text: Mapped[str] = mapped_column(unique=True)
+    author: Mapped[str] = mapped_column(unique=False)
+    mode: Mapped[Mode] = mapped_column(default=Mode.ORDINARY, unique=False)

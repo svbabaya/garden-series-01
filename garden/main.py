@@ -1,5 +1,5 @@
 from contextlib import asynccontextmanager
-from models import Base, db_helper
+from models import db_helper, Base
 
 from fastapi import FastAPI
 import uvicorn
@@ -10,28 +10,29 @@ from core.config import settings
 
 
 @asynccontextmanager
-async def lifespan(_: FastAPI):
+async def lifespan(app: FastAPI):
+    # startup
     async with db_helper.engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
-
     yield
+    # shutdown
+    await db_helper.dispose()
 
-
-app = FastAPI(
+main_app = FastAPI(
     title="School Garden Learning Portal",
     version="1.0.0",
     lifespan=lifespan,
 )
 
 # API routes
-# app.include_router(
+# main_app.include_router(
 #     api_plants.router,
 #     deprecated=False,
 #     prefix=settings.prefix.api_plants,
 #     tags=settings.tags.api_plants,
 #     responses={404: {"description": "Not found"}},
 # )
-app.include_router(
+main_app.include_router(
     api_messages.router,
     deprecated=False,
     prefix=settings.prefix.api_messages,
@@ -39,11 +40,11 @@ app.include_router(
     responses={404: {"description": "Not found"}},
 )
 
-# app.include_router(api_admin.router, deprecated=False, prefix=settings.prefix.api_admin, tags=settings.tags.api_admin)
-# app.include_router(api_auth.router, deprecated=False, prefix=settings.prefix.api_auth, tags=settings.tags.api_auth)
+# main_app.include_router(api_admin.router, deprecated=False, prefix=settings.prefix.api_admin, tags=settings.tags.api_admin)
+# main_app.include_router(api_auth.router, deprecated=False, prefix=settings.prefix.api_auth, tags=settings.tags.api_auth)
 
 # Web routes
-# app.include_router(
+# main_app.include_router(
 #     web_plants.router,
 #     deprecated=False,
 #     prefix=settings.prefix.web_plants,
@@ -51,16 +52,16 @@ app.include_router(
 #     responses={404: {"description": "Not found"}},
 # )
 
-# app.include_router(web_admin.router, deprecated=False, prefix=settings.prefix.web_admin, tags=settings.tags.web_admin)
-# app.include_router(web_auth.router, deprecated=False, prefix=settings.prefix.web_auth, tags=settings.tags.web_auth)
+# main_app.include_router(web_admin.router, deprecated=False, prefix=settings.prefix.web_admin, tags=settings.tags.web_admin)
+# main_app.include_router(web_auth.router, deprecated=False, prefix=settings.prefix.web_auth, tags=settings.tags.web_auth)
 
 
-@app.get("/", tags=["home"])
+@main_app.get("/", tags=["home"])
 async def index():
     return [{"template": "index.html"}]
 
 
 if __name__ == "__main__":
     uvicorn.run(
-        app="main:app", host=settings.run.host, port=settings.run.port, reload=True
+        app="main:main_app", host=settings.run.host, port=settings.run.port, reload=True
     )
