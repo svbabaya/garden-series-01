@@ -14,5 +14,4 @@ class MessageCreate(MessageBase):  # scheme for create
 
 class Message(MessageBase):  # scheme for get response
     model_config = ConfigDict(from_attributes=True)
-
     id: int

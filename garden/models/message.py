@@ -8,8 +8,8 @@ class Mode(str, Enum):
 
 
 class Message(Base):
-    __tablename__ = "messages"
+    # __tablename__ = "messages"
 
-    text: Mapped[str] = mapped_column(unique=True)
-    author: Mapped[str] = mapped_column(unique=False)
+    text: Mapped[str] = mapped_column(unique=True, nullable=False)
+    author: Mapped[str] = mapped_column(unique=False, nullable=False)
     mode: Mapped[Mode] = mapped_column(default=Mode.ORDINARY, unique=False)
