@@ -1,12 +1,14 @@
 from contextlib import asynccontextmanager
 from models import db_helper, Base
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import uvicorn
 
 from routes import api_plants, api_messages, web_plants
 
 from core.config import settings
+
+from utils.templates import templates
 
 
 @asynccontextmanager
@@ -57,8 +59,13 @@ main_app.include_router(
 
 
 @main_app.get("/", tags=["home"])
-async def index():
-    return [{"template": "index.html"}]
+async def index(
+        request: Request,
+):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+    )
 
 
 if __name__ == "__main__":
