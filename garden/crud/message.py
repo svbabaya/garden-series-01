@@ -1,8 +1,9 @@
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.engine import Result
 from sqlalchemy.ext.asyncio import AsyncSession
 from models import Message
 from schemes import MessageCreate
+from core.config import settings
 
 
 async def get_messages(session: AsyncSession) -> list[Message]:
@@ -17,8 +18,14 @@ async def get_message_by_id(session: AsyncSession, message_id: int) -> Message |
 
 
 async def get_current_message(session: AsyncSession) -> Message | None:
-    message_id = 1
-    return await session.get(Message, message_id)
+    if session is None:
+        return Message(
+            text=settings.default_strings.message_text,
+            author=settings.default_strings.message_author,
+        )
+    else:
+        message_id = 1 # ToDo random select from ORDINARY messages
+        return await session.get(Message, message_id)
 
 
 async def create_message(session: AsyncSession, message_in: MessageCreate) -> Message:

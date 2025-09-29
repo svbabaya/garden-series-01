@@ -4,13 +4,17 @@
 Homepage
 {% endblock title %}
 
-{% block body %}
+{% block header %}
 <h1>GARDEN</h1>
+{% endblock header %}
+
+{% block main %}
 <p>{{ message.author }}</p>
 <p>{{ message.text }}</p>
+{% endblock main %}
 
+{% block footer %}
 <div>
     <a href="{{ url_for('home') }}">Home</a>
 </div>
-
-{% endblock body %}
+{% endblock footer %}

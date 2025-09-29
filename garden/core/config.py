@@ -9,9 +9,10 @@ class RunConfig(BaseModel):
     host: str = "127.0.0.1"
     port: int = 8000
 
-class DefaultText(BaseModel):
-    author: str = ""
-    message: str = ""
+
+class DefaultStrings(BaseModel):
+    message_author: str = "Confucius"
+    message_text: str = "Rice keeps me alive, but flowers give me a reason to stay alive."
 
 
 class Prefix(BaseModel):
@@ -52,7 +53,7 @@ class Settings(BaseSettings):
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
     db: DatabaseConfig = DatabaseConfig()
-    default_text: DefaultText = DefaultText()
+    default_strings: DefaultStrings = DefaultStrings()
 
 
 settings = Settings()
