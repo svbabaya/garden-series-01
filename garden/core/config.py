@@ -11,7 +11,7 @@ class RunConfig(BaseModel):
 
 
 class DefaultStrings(BaseModel):
-    message_author: str = "Confucius"
+    message_caption: str = "Confucius"
     message_text: str = "Rice keeps me alive, but flowers give me a reason to stay alive."
 
 

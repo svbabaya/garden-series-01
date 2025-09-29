@@ -4,8 +4,9 @@ from models import Mode
 
 class MessageBase(BaseModel):
     text: str
-    author: str
+    caption: str
     mode: Mode
+    is_displayed: bool = False
 
 
 class MessageCreate(MessageBase):  # scheme for create

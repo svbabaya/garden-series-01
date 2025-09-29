@@ -21,11 +21,17 @@ async def get_current_message(session: AsyncSession) -> Message | None:
     if session is None:
         return Message(
             text=settings.default_strings.message_text,
-            author=settings.default_strings.message_author,
+            caption=settings.default_strings.message_caption,
         )
     else:
-        message_id = 1 # ToDo random select from ORDINARY messages
-        return await session.get(Message, message_id)
+        stmt = (
+            select(Message)
+            .where(Message.is_displayed == True, Message.is_active == True)
+            .order_by(func.random())
+            .limit(1)
+        )
+        result = await session.execute(stmt)
+        return result.scalar_one_or_none()
 
 
 async def create_message(session: AsyncSession, message_in: MessageCreate) -> Message:
