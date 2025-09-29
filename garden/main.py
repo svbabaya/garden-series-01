@@ -1,14 +1,13 @@
 from contextlib import asynccontextmanager
+
 from models import db_helper, Base
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 import uvicorn
 
-from routes import api_plants, api_messages, web_plants
+from routes import api_plants, api_messages, views_index, views_plants
 
 from core.config import settings
-
-from utils.templates import templates
 
 
 @asynccontextmanager
@@ -42,30 +41,13 @@ main_app.include_router(
     responses={404: {"description": "Not found"}},
 )
 
-# main_app.include_router(api_admin.router, deprecated=False, prefix=settings.prefix.api_admin, tags=settings.tags.api_admin)
-# main_app.include_router(api_auth.router, deprecated=False, prefix=settings.prefix.api_auth, tags=settings.tags.api_auth)
-
-# Web routes
-# main_app.include_router(
-#     web_plants.router,
-#     deprecated=False,
-#     prefix=settings.prefix.web_plants,
-#     tags=settings.tags.web_plants,
-#     responses={404: {"description": "Not found"}},
-# )
-
-# main_app.include_router(web_admin.router, deprecated=False, prefix=settings.prefix.web_admin, tags=settings.tags.web_admin)
-# main_app.include_router(web_auth.router, deprecated=False, prefix=settings.prefix.web_auth, tags=settings.tags.web_auth)
-
-
-@main_app.get("/", tags=["home"])
-async def index(
-        request: Request,
-):
-    return templates.TemplateResponse(
-        request=request,
-        name="index.html",
-    )
+# Views routes
+main_app.include_router(
+    views_index.router,
+    deprecated=False,
+    tags=settings.tags.views_index,
+    responses={404: {"description": "Not found"}},
+)
 
 
 if __name__ == "__main__":

@@ -9,15 +9,19 @@ class RunConfig(BaseModel):
     host: str = "127.0.0.1"
     port: int = 8000
 
+class DefaultText(BaseModel):
+    author: str = ""
+    message: str = ""
+
 
 class Prefix(BaseModel):
     api_plants: str = "/api/plants"
     api_messages: str = "/api/messages"
     api_admin: str = "/api/admin"
     api_auth: str = "/api/auth"
-    web_plants: str = "/plants"
-    web_admin: str = "/admin"
-    web_auth: str = "/auth"
+    views_plants: str = "/plants"
+    views_admin: str = "/admin"
+    views_auth: str = "/auth"
 
 
 class Tags:
@@ -25,9 +29,10 @@ class Tags:
     api_messages: list[str] = ["api-messages"]
     api_admin: list[str] = ["api-admin"]
     api_auth: list[str] = ["api-auth"]
-    web_plants: list[str] = ["web-plants"]
-    web_admin: list[str] = ["web-admin"]
-    web_auth: list[str] = ["web-auth"]
+    views_index: list[str] = ["home"]
+    views_plants: list[str] = ["views-plants"]
+    views_admin: list[str] = ["views-admin"]
+    views_auth: list[str] = ["views-auth"]
 
 
 class DatabaseConfig(BaseModel):
@@ -47,6 +52,7 @@ class Settings(BaseSettings):
     prefix: Prefix = Prefix()
     tags: Tags = Tags()
     db: DatabaseConfig = DatabaseConfig()
+    default_text: DefaultText = DefaultText()
 
 
 settings = Settings()

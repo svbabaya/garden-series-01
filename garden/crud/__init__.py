@@ -1,5 +1,6 @@
-# import message as crud_message
-#
-# __all__ = (
-#     "crud_message"
-# )
+from .message import get_current_message
+
+
+__all__ = (
+    "get_current_message",
+)

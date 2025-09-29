@@ -23,10 +23,10 @@ async def create_message(
 
 
 @router.get("/{message_id}", response_model=Message)
-async def get_message(
+async def get_message_by_id(
     message_id: int, session: AsyncSession = Depends(db_helper.session_getter)
 ):
-    message = await crud.get_message(session=session, message_id=message_id)
+    message = await crud.get_message_by_id(session=session, message_id=message_id)
     if message:
         return message
 

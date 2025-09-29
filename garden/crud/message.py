@@ -12,7 +12,12 @@ async def get_messages(session: AsyncSession) -> list[Message]:
     return list(products)
 
 
-async def get_message(session: AsyncSession, message_id: int) -> Message | None:
+async def get_message_by_id(session: AsyncSession, message_id: int) -> Message | None:
+    return await session.get(Message, message_id)
+
+
+async def get_current_message(session: AsyncSession) -> Message | None:
+    message_id = 1
     return await session.get(Message, message_id)
 
 
