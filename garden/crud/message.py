@@ -1,7 +1,7 @@
 from sqlalchemy import select, func
 from sqlalchemy.engine import Result
 from sqlalchemy.ext.asyncio import AsyncSession
-from models import Message
+from models import Message, Mode
 from schemes import MessageCreate
 from core.config import settings
 
@@ -18,7 +18,7 @@ async def get_message_by_id(session: AsyncSession, message_id: int) -> Message |
 
 
 async def get_current_message(session: AsyncSession) -> Message | None:
-    if session is None or no_messages_to_display(session):
+    if session is None or await no_messages_to_display(session):
         return Message(
             text=settings.default_strings.message_text,
             caption=settings.default_strings.message_caption,
@@ -26,7 +26,10 @@ async def get_current_message(session: AsyncSession) -> Message | None:
     else:
         stmt = (
             select(Message)
-            .where(Message.is_displayed == True, Message.is_active == True)
+            .where(Message.is_displayed == True,
+                   Message.is_active == True,
+                   Message.mode == Mode.ORDINARY,
+                   )
             .order_by(func.random())
             .limit(1)
         )

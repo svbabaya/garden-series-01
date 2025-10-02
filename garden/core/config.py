@@ -12,7 +12,7 @@ class RunConfig(BaseModel):
 
 class DefaultStrings(BaseModel):
     message_caption: str = "Confucius"
-    message_text: str = "Rice keeps me alive, but flowers give me a reason to stay alive."
+    message_text: str = "Rice keeps me alive, but flowers give me a reason to stay alive"
 
 
 class Prefix(BaseModel):

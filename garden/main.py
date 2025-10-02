@@ -3,6 +3,8 @@ from contextlib import asynccontextmanager
 from models import db_helper, Base
 
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
 import uvicorn
 
 from routes import api_plants, api_messages, views_index, views_plants
@@ -24,6 +26,8 @@ main_app = FastAPI(
     version="1.0.0",
     lifespan=lifespan,
 )
+
+main_app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # API routes
 # main_app.include_router(
