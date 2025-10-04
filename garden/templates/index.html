@@ -5,16 +5,39 @@ School 30 garden portal homepage
 {% endblock title %}
 
 {% block header %}
-<h1>GARDEN/30</h1>
+<div class="header-container">
+    <a href="{{ url_for('home') }}" class="logo-link">
+        <span class="logo-name">GARDEN</span>
+        <span class="logo-number">/30</span>
+    </a>
+    <div class="menu">
+        <p>Menu</p>
+    </div>
+</div>
 {% endblock header %}
 
+{% block animation %}
+<div class="animation-container">
+    <p>Animation</p>
+</div>
+{% endblock animation %}
+
 {% block main %}
-<p>{{ message.caption }}</p>
-<p>{{ message.text }}</p>
+<div class="main-container">
+    <div class="message-container">
+        <p>{{ message.caption }}</p>
+        <p>{{ message.text }}</p>
+    </div>
+    <div class="categories-container">
+        <p>Trees</p>
+        <p>Bushes</p>
+        <p>Herbs</p>
+    </div>
+</div>
 {% endblock main %}
 
 {% block footer %}
-<div>
-    <a href="{{ url_for('home') }}">Home</a>
+<div class="footer-container">
+
 </div>
 {% endblock footer %}

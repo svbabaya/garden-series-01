@@ -1,0 +1,50 @@
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  padding: 0px 20px;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  padding: 0px 20px;
+}
+
+.message-container p {
+  display: block;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo-link {
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+
+}
+
+.logo-name {
+  color: #000;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.logo-number {
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+}
