@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.get("/")
+@router.get("/plants")
 async def get_all_plants():
     return [{"template": "plants.html"}]
 

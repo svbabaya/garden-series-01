@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 
 import uvicorn
 
-from routes import api_plants, api_messages, views_index, views_plants
+from routes import api_plants, api_messages, view_home, view_user
 
 from core.config import settings
 
@@ -31,14 +31,14 @@ main_app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # API routes
 # main_app.include_router(
-#     api_plants.router,
+#     api_plants,
 #     deprecated=False,
 #     prefix=settings.prefix.api_plants,
 #     tags=settings.tags.api_plants,
 #     responses={404: {"description": "Not found"}},
 # )
 main_app.include_router(
-    api_messages.router,
+    api_messages,
     deprecated=False,
     prefix=settings.prefix.api_messages,
     tags=settings.tags.api_messages,
@@ -47,9 +47,9 @@ main_app.include_router(
 
 # Views routes
 main_app.include_router(
-    views_index.router,
+    view_home,
     deprecated=False,
-    tags=settings.tags.views_index,
+    tags=settings.tags.view_home,
     responses={404: {"description": "Not found"}},
 )
 

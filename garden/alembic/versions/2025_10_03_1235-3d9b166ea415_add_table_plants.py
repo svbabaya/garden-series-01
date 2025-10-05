@@ -1,4 +1,4 @@
-"""Add table plants
+"""Add table user
 
 Revision ID: 3d9b166ea415
 Revises: 44e17c2988cd

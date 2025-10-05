@@ -1,50 +1,64 @@
+body {
+    padding-top: 10px;
+}
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-  padding: 0px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 0px 15px;
+}
+
+.animation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    // display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 0px 15px;
 }
 
 .main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: top;
-  padding: 0px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    // display: flex;
+    justify-content: space-between;
+    align-items: top;
+    padding: 0px 15px;
 }
 
-.message-container p {
-  display: block;
-  width: 100%;
+.message-container {
+    max-width: 300px;
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
 }
 
 .logo-link {
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s ease;
-
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 .logo-name {
-  color: #000;
-  font-size: 44px;
-  font-weight: 700;
+    color: #000;
+    font-size: 44px;
+    font-weight: 700;
 }
 
 .logo-number {
-  color: #000;
-  font-size: 14px;
-  font-weight: 300;
+    color: #000;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.menu {
+    padding: 10px;
 }

@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 router = APIRouter()
 
 @router.get("/", name="home")
-async def index(
+async def home(
     request: Request,
     session: Annotated[
         AsyncSession,
@@ -19,6 +19,6 @@ async def index(
     message = await crud.get_current_message(session=session)
     return templates.TemplateResponse(
         request=request,
-        name="index.html",
+        name="user/home.html",
         context={"message": message},
     )

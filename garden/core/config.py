@@ -18,22 +18,16 @@ class DefaultStrings(BaseModel):
 class Prefix(BaseModel):
     api_plants: str = "/api/plants"
     api_messages: str = "/api/messages"
-    api_admin: str = "/api/admin"
-    api_auth: str = "/api/auth"
-    views_plants: str = "/plants"
-    views_admin: str = "/admin"
-    views_auth: str = "/auth"
+    view_user: str = "/user"
+    view_admin: str = "/admin"
 
 
 class Tags:
     api_plants: list[str] = ["api-plants"]
     api_messages: list[str] = ["api-messages"]
-    api_admin: list[str] = ["api-admin"]
-    api_auth: list[str] = ["api-auth"]
-    views_index: list[str] = ["home"]
-    views_plants: list[str] = ["views-plants"]
-    views_admin: list[str] = ["views-admin"]
-    views_auth: list[str] = ["views-auth"]
+    view_user: list[str] = ["view-user"]
+    view_admin: list[str] = ["view-admin"]
+    view_home: list[str] = ["view-home"]
 
 
 class DatabaseConfig(BaseModel):

@@ -20,7 +20,7 @@ class Location(str, Enum): # ToDo make individuals names for each zone not matri
     ZONE33 = "3_3"
 
 class Plant(Base):
-    # __tablename__ = "plants"
+    # __tablename__ = "user"
 
     name: Mapped[str] = mapped_column(unique=True, nullable=False)
     intro: Mapped[str] = mapped_column(unique=False, nullable=False)
