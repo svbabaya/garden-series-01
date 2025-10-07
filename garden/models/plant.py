@@ -28,3 +28,4 @@ class Plant(Base):
     location: Mapped[Location] = mapped_column(unique=False, nullable=True)
     category: Mapped[Category] = mapped_column(unique=False, nullable=True)
     # articles: Mapped[Article]
+    # code: Mapped[str] = mapped_column(unique=True, nullable=False)
