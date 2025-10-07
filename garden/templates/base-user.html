@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+School 30 garden portal homepage
+{% endblock title %}
+
+{% block header %}
+<div class="header-container">
+    <a href="{{ url_for('home') }}" class="logo">
+        <span class="logo-name">GARDEN</span>
+        <span class="logo-number">/30</span>
+    </a>
+    <input class="side-menu" type="checkbox" id="side-menu"/>
+    <label class="hamb" for="side-menu"><span class="hamb-line"></span></label>
+    <nav class="nav">
+        <ul class="menu">
+            <li><a href="#">Garden History</a></li>
+            <li><a href="#">All Plants</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About Portal</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock header %}
+
+{% block footer %}
+<div class="footer-container">
+    <p>footer-container</p>
+</div>
+{% endblock footer %}

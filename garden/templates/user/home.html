@@ -1,20 +1,4 @@
-{% extends 'base.html' %}
-
-{% block title %}
-School 30 garden portal homepage
-{% endblock title %}
-
-{% block header %}
-<div class="header-container">
-    <a href="{{ url_for('home') }}" class="logo-link">
-        <span class="logo-name">GARDEN</span>
-        <span class="logo-number">/30</span>
-    </a>
-    <div class="menu">
-        <img src="{{ url_for('static', path='icons/btn-menu.svg') }}" alt="Image-menu">
-    </div>
-</div>
-{% endblock header %}
+{% extends 'base-user.html' %}
 
 {% block animation %}
 <div class="animation-container">
@@ -35,9 +19,3 @@ School 30 garden portal homepage
     </div>
 </div>
 {% endblock main %}
-
-{% block footer %}
-<div class="footer-container">
-
-</div>
-{% endblock footer %}

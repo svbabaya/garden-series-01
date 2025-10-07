@@ -5,6 +5,8 @@ from enum import Enum
 
 class Mode(str, Enum):
     ORDINARY = "ordinary"
+    ACCELERATED = "accelerated"
+    CONTINUOUS = "continuous"
 
 
 class Message(Base):
