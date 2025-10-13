@@ -4,7 +4,7 @@ router = APIRouter()
 
 @router.get("/plants")
 async def get_all_plants():
-    return [{"template": "plants.html"}]
+    return [{"template": "selection.html"}]
 
 
 @router.get("/{category_id}")
