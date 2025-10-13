@@ -4,47 +4,47 @@
     --nav-grey: #85888c;
 }
 
+.site {
+    max-width: 1000px;
+    margin: 0 auto;
+    // border: 1px solid rgba(0,0,0,.5);
+    // border-radius: 10px;
+}
 .header-container {
+    height: 60px;
     position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 0px;
+    padding-right: 5%;
 }
-
 .animation-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 0px;
+    height: 100px;
+    background-color: yellow;
 }
-
-.main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 0px;
-}
-
 .message-container {
     max-width: 300px;
 }
+.main-container {
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0px 0px;
 }
+.footer-container {
+
+}
+
 
 .logo {
     display: inline-block;
     transition: transform 0.2s ease;
 }
-
 .logo-name {
     color: #000;
     font-size: 44px;
     font-weight: 700;
 }
-
 .logo-number {
     color: #000;
     font-size: 17px;
@@ -52,111 +52,87 @@
 }
 
 /* Nav menu */
-.nav {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    background-color: var(--nav-bg);
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .5s ease-out;
+nav {
+    text-transform: capitalize;
 }
-.nav hr {
-    color: var(--nav-gray);
+
+nav ul li {
+    position: relative;
+    float: left;
 }
-.menu {
-    margin-bottom: 20px;
-}
-.menu a {
+nav ul li a {
+    color: #000;
     display: block;
-    padding: 20px 0px;
-    color: var(--nav-black);
-    font-size: 20px;
+    padding: 20px;
 }
-.menu a:hover {
-    color: var(--nav-gray);
+nav ul li a:hover {
+    background: #000;
+    color: #fff;
 }
 
 /* Menu Icon */
-.hamb {
+.menu {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    background: transparent;
     cursor: pointer;
-    float: right;
-    padding: 10px 18px;
-    position: relative;
-    width: 60px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.hamb-line {
-    background: var(--nav-black);
+input[type=checkbox] {
+    display: none;
+}
+.menu span {
     display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: black;
+    transition: all 0.3s ease;
     transform-origin: center;
 }
-.hamb-line::before,
-.hamb-line::after {
-    background: var(--nav-black);
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all .2s ease-out;
-    width: 100%;
+.menu span:nth-child(1) {
+    top: 0;
 }
-.hamb-line::before {
-    top: 8px;
+.menu span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
 }
-.hamb-line::after {
-    top: -8px;
+.menu span:nth-child(3) {
+    top: 100%;
+    transform: translateY(-100%);
 }
-.side-menu {
+input:checked ~ label span:nth-child(1) {
+    opacity: 0;
+}
+input:checked ~ label span:nth-child(2) {
+    height: 3px;
+    transition: all 0.3s ease;
+}
+input:checked ~ label span:nth-child(3) {
+    opacity: 0;
+}
+.header-container label {
     display: none;
 }
 
-/* Toggle menu icon */
-.side-menu:checked ~ nav {
-    max-height: 100%;
-}
-.side-menu:checked ~ .hamb .hamb-line {
-     width: 14px;
-     height: 4px;
-}
-.side-menu:checked ~ .hamb .hamb-line::before {
-    background: transparent;
-}
-.side-menu:checked ~ .hamb .hamb-line::after {
-    background: transparent;
-}
-body:has(.side-menu:checked) {
-    overflow: hidden;
-}
-
 /* Responsiveness */
-@media (min-width: 768px) {
-    .nav {
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-    }
-    .menu li {
-        float: left;
-    }
-    .menu a:hover {
-        background-color: transparent;
-        color: var(--gray);
-
-    }
-    .hamb {
+@media (max-width: 768px) {
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid rgba(0,0,0,.1);
         display: none;
     }
-    hr {
-        display: none;
+    nav ul li {
+        width: 100%;
+    }
+    .header-container .menu {
+        display: initial;
+    }
+    #menu:checked ~ nav {
+        display: initial;
     }
 }
