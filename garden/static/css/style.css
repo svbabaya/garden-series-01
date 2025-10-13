@@ -61,10 +61,17 @@
     max-height: 0;
     transition: max-height .5s ease-out;
 }
+.nav hr {
+    color: var(--nav-gray);
+}
+.menu {
+    margin-bottom: 20px;
+}
 .menu a {
     display: block;
-    padding: 30px 0px;
+    padding: 20px 0px;
     color: var(--nav-black);
+    font-size: 20px;
 }
 .menu a:hover {
     color: var(--nav-gray);
@@ -126,4 +133,30 @@
 }
 body:has(.side-menu:checked) {
     overflow: hidden;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    .nav {
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li {
+        float: left;
+    }
+    .menu a:hover {
+        background-color: transparent;
+        color: var(--gray);
+
+    }
+    .hamb {
+        display: none;
+    }
+    hr {
+        display: none;
+    }
 }
