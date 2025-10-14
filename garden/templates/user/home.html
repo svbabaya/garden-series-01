@@ -2,15 +2,15 @@
 
 {% block animation %}
 <div class="animation-container">
-    <p>animation-container</p>
+    <img src="{{ url_for('static', path='images/butterfly-01.svg') }}" alt="butterfly">
 </div>
 {% endblock animation %}
 
 {% block main %}
 <div class="main-container">
-    <div class="message-container">
-        <p>{{ message.caption }}</p>
-        <p>{{ message.text }}</p>
+    <div class="message">
+        <p class="caption title-font">{{ message.caption }}</p>
+        <p class="text text-font">{{ message.text }}</p>
     </div>
     <div class="categories-container">
         <p>history-container</p>

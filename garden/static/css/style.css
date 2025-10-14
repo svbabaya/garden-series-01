@@ -3,6 +3,23 @@
     //--nav-black: #36383f;
     //--nav-grey: #85888c;
 }
+.logo-font {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.title-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+.text-font {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
 
 .site {
     margin: 0 10px 0 10px;
@@ -20,22 +37,40 @@
     padding-right: 5%;
 }
 .animation-container {
-    height: 100px;
+    height: 90px;
     background-color: #fff;
-}
-.message-container {
-    max-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .main-container {
 
 }
+.main-container .message {
+    max-width: 300px;
+}
+.main-container .message .caption {
+    font-size: 12px;
+    color: #bfbfbf;
+    margin-bottom: 5px;
+}
+.main-container .message .text {
+    font-size: 18px;
+    line-height: 1.2;
+    color: black;
+    margin-bottom: 15px;
+}
+
+
+
 .footer-container {
 
 }
 
-
+/* Logo */
 .logo {
     display: inline-block;
+    letter-spacing: 0.1em;
     transition: transform 0.2s ease;
 }
 .logo-name {
@@ -52,6 +87,7 @@
 /* Nav menu */
 nav {
     text-transform: capitalize;
+    font-size: 16px;
 }
 nav ul li {
     position: relative;
@@ -112,7 +148,7 @@ input:checked ~ label span:nth-child(3) {
 }
 
 /* Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
     nav {
         position: absolute;
         top: 100%;
