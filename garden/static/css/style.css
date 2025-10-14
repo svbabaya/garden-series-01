@@ -22,7 +22,7 @@
 }
 
 .site {
-    margin: 0 10px 0 10px;
+    margin: 0;
 }
 .header-container {
     position: sticky;
@@ -35,6 +35,7 @@
     justify-content: space-between;
     align-items: center;
     padding-right: 5%;
+    margin: 0 10px;
 }
 .animation-container {
     height: 90px;
@@ -43,8 +44,9 @@
     justify-content: flex-end;
     align-items: center;
 }
-.main-container {
 
+.main-container {
+    margin: 0 10px;
 }
 .main-container .message {
     max-width: 300px;
@@ -61,10 +63,8 @@
     margin-bottom: 15px;
 }
 
-
-
 .footer-container {
-
+    margin: 0 10px;
 }
 
 /* Logo */
