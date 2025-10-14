@@ -1,21 +1,19 @@
 :root {
-    --nav-bg: #ffffff;
-    --nav-black: #36383f;
-    --nav-grey: #85888c;
+    //--nav-bg: #ffffff;
+    //--nav-black: #36383f;
+    //--nav-grey: #85888c;
 }
 
 .site {
-    max-width: 1000px;
-    margin: 0 auto;
-    // border: 1px solid rgba(0,0,0,.5);
-    // border-radius: 10px;
+    margin: 0 10px 0 10px;
 }
 .header-container {
-    height: 60px;
     position: sticky;
+    height: 60px;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +21,7 @@
 }
 .animation-container {
     height: 100px;
-    background-color: yellow;
+    background-color: #fff;
 }
 .message-container {
     max-width: 300px;
@@ -55,7 +53,6 @@
 nav {
     text-transform: capitalize;
 }
-
 nav ul li {
     position: relative;
     float: left;
@@ -73,7 +70,7 @@ nav ul li a:hover {
 /* Menu Icon */
 .menu {
     position: relative;
-    width: 30px;
+    width: 24px;
     height: 20px;
     background: transparent;
     cursor: pointer;
@@ -86,9 +83,8 @@ input[type=checkbox] {
     position: absolute;
     height: 1px;
     width: 100%;
-    background: black;
+    background: #000;
     transition: all 0.3s ease;
-    transform-origin: center;
 }
 .menu span:nth-child(1) {
     top: 0;
@@ -105,8 +101,8 @@ input:checked ~ label span:nth-child(1) {
     opacity: 0;
 }
 input:checked ~ label span:nth-child(2) {
-    height: 3px;
     transition: all 0.3s ease;
+    height: 3px;
 }
 input:checked ~ label span:nth-child(3) {
     opacity: 0;
@@ -122,7 +118,7 @@ input:checked ~ label span:nth-child(3) {
         top: 100%;
         left: 0;
         right: 0;
-        background: white;
+        background: #fff;
         border-top: 1px solid rgba(0,0,0,.1);
         display: none;
     }
