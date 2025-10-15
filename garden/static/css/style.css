@@ -28,14 +28,11 @@
     position: sticky;
     height: 60px;
     top: 0;
-    left: 10px;
-    right: 10px;
     bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-right: 5%;
-    margin: 0 10px;
 }
 .animation-container {
     height: 90px;
@@ -70,6 +67,7 @@
 /* Logo */
 .logo {
     display: inline-block;
+    margin-left: 10px;
     letter-spacing: 0.1em;
     transition: transform 0.2s ease;
 }
@@ -167,4 +165,18 @@ input:checked ~ label span:nth-child(3) {
     #menu:checked ~ nav {
         display: initial;
     }
+}
+
+.drawing-svg path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s ease-in-out forwards;
+}
+
+@keyframes draw {
+    to { stroke-dashoffset: 0; }
 }
