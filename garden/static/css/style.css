@@ -47,6 +47,7 @@
 }
 .main-container .message {
     max-width: 300px;
+    margin-bottom: 20px;
 }
 .main-container .message .caption {
     font-size: 12px;
@@ -57,7 +58,6 @@
     font-size: 18px;
     line-height: 1.2;
     color: black;
-    margin-bottom: 15px;
 }
 
 .footer-container {
@@ -73,7 +73,7 @@
 }
 .logo-name {
     color: #000;
-    font-size: 44px;
+    font-size: 46px;
     font-weight: 700;
 }
 .logo-number {
@@ -167,6 +167,7 @@ input:checked ~ label span:nth-child(3) {
     }
 }
 
+/* Home animation */
 .drawing-svg path {
     stroke: #000;
     stroke-linecap: round;
@@ -179,4 +180,46 @@ input:checked ~ label span:nth-child(3) {
 
 @keyframes draw {
     to { stroke-dashoffset: 0; }
+}
+
+/* Cards */
+.home-cards {
+    width: 100%;
+}
+.card {
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.card .media-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+.card .media-container .media {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.card .media-container .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 28px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.card .title {
+    font-size: 12px;
+    color: #bfbfbf;
+    margin-bottom: 5px;
+}
+.card .text {
+    font-size: 12px;
+    color: #000;
+    line-height: 1.2;
 }

@@ -2,26 +2,71 @@
 
 {% block animation %}
 <div class="animation-container">
-    <!--img src="{{ url_for('static', path='images/butterfly-01.svg') }}" alt="butterfly"-->
-
     <svg class="drawing-svg" width="167" height="90" viewBox="0 0 167 90" xmlns="http://www.w3.org/2000/svg">
-        <path d="M166 79.8886C159.577 75.2796 143.118 68.7414 143.117 82.8944C143.117 91.9121 153.864 90.1086 152.752 82.8944C152.052 78.3503 149.741 71.4721 134.084 78.085C121.559 83.3754 110.8 81.8925 106.986 80.4897C98.3142 77.6041 94.9419 72.4741 94.3397 70.2698C92.3691 63.0557 98.5549 59.6492 101.566 60.6511C104.577 61.653 104.577 65.4605 102.77 67.8652C95.8294 77.1039 81.2107 67.8039 75.6717 63.6567C72.46 61.2521 66.6387 57.6452 61.219 55.8417C53.4551 53.2581 47.9708 53.437 41.3469 48.6276C38.5919 46.6274 34.1206 41.4135 35.9272 40.8124C37.3723 40.3314 39.5402 42.6159 42.5511 45.0206C45.5621 47.4253 45.5621 47.4253 48.573 49.2288C51.584 51.0323 54.5949 51.6335 53.9927 49.83C53.5913 48.6276 51.7835 48.0154 51.584 46.223C51.288 43.5633 55.6953 41.0669 57.0037 37.8065C58.3569 34.4342 57.6059 30.5922 55.7993 28.7888C53.9927 26.9854 51.584 26.9854 46.7664 29.3901L41.3467 31.7948C37.011 33.7186 36.73 37.005 37.1314 38.4077C37.6132 39.3696 38.5365 38.8085 38.938 38.4077L52.1862 24.5807C55.5584 21.2141 53.3905 19.1702 50.9818 17.3666C48.573 15.5632 48.573 13.7595 49.1752 10.7538C49.7774 7.74803 50.1702 6.26749 49.7774 4.14082C49.3846 2.01414 47.3686 0.533617 45.5621 1.13495C43.7555 1.73629 42.1497 4.54166 41.3467 5.94439C41.3467 5.94439 37.7336 12.5571 35.927 16.7655C34.1205 20.9739 33.9849 22.1758 33.5183 25.1819C33.0516 28.188 32.9161 30.5922 32.9161 34.1993C32.9161 37.8063 33.5183 42.0145 34.7227 44.4192C35.927 46.8239 37.7336 49.2291 39.5401 50.4312C41.3467 51.6333 42.5511 52.2342 44.3577 52.8356C46.1642 53.437 47.3687 54.0382 48.573 54.6394C49.7774 55.2405 50.3796 55.8417 50.3796 56.4429C50.3796 57.7872 47.9708 57.6453 44.9599 55.8417C42.0694 53.918 39.5401 54.6394 37.1314 55.2405C34.7227 55.8417 32.3139 57.0441 29.9051 55.8417C27.4963 54.6394 27.2957 51.6335 27.4964 50.4312C27.9781 47.0646 30.1058 45.0205 31.1095 44.4193C32.0183 43.8749 32.7154 44.2188 32.9161 44.4192C34.3613 46.343 29.4193 50.1697 25.6898 51.0323C22.1332 51.855 19.0657 51.6333 16.6569 48.6276C14.2481 45.622 13.0438 43.818 8.22628 44.4194C3.40873 45.0208 1 43.2171 1 41.4136C1 39.6101 2.20438 38.4077 4.61314 37.8065C7.0219 37.2054 16.0547 34.8007 22.0766 36.6042C28.0985 38.4077 27.4963 38.4077 29.3029 39.0089C31.1095 39.6101 31.1095 38.4077 30.5073 37.2054C29.9051 36.003 28.7008 32.396 28.0985 29.3901C27.4963 26.3843 28.0985 23.3784 28.0985 23.3784"/>
+        <path d="M166 79.889c-6.423-4.61-22.882-11.148-22.883 3.005 0 9.018 10.747 7.215 9.635 0-.7-4.544-3.011-11.422-18.668-4.809-12.525 5.29-23.284 3.808-27.098 2.405-8.672-2.886-12.044-8.016-12.646-10.22-1.97-7.214 4.215-10.62 7.226-9.619 3.011 1.002 3.011 4.81 1.204 7.214-6.94 9.239-21.56-.061-27.098-4.208-3.212-2.405-9.033-6.012-14.453-7.815-7.764-2.584-13.248-2.405-19.872-7.214-2.755-2-7.226-7.215-5.42-7.816 1.445-.48 3.613 1.804 6.624 4.209 3.011 2.404 3.011 2.404 6.022 4.208 3.011 1.803 6.022 2.404 5.42.601-.402-1.202-2.21-1.815-2.409-3.607-.296-2.66 4.111-5.156 5.42-8.416 1.353-3.373.602-7.215-1.205-9.018-1.806-1.804-4.215-1.804-9.033.601l-5.42 2.405c-4.335 1.924-4.616 5.21-4.215 6.613.482.962 1.405.4 1.807 0L52.186 24.58c3.372-3.367 1.205-5.41-1.204-7.214-2.409-1.804-2.409-3.608-1.807-6.613.602-3.006.995-4.487.602-6.613-.392-2.127-2.408-3.607-4.215-3.006-1.806.601-3.412 3.407-4.215 4.81 0 0-3.613 6.612-5.42 10.82-1.806 4.209-1.942 5.41-2.409 8.417-.466 3.006-.602 5.41-.602 9.017 0 3.607.602 7.816 1.807 10.22 1.204 2.405 3.01 4.81 4.817 6.012 1.807 1.202 3.011 1.803 4.818 2.405 1.806.601 3.01 1.202 4.215 1.803 1.204.601 1.807 1.203 1.807 1.804 0 1.344-2.41 1.202-5.42-.601-2.89-1.924-5.42-1.203-7.829-.602-2.408.602-4.817 1.804-7.226.602-2.409-1.203-2.61-4.209-2.409-5.41.482-3.367 2.61-5.412 3.614-6.013.908-.544 1.605-.2 1.806 0 1.445 1.924-3.497 5.75-7.226 6.613-3.557.823-6.624.601-9.033-2.404-2.409-3.006-3.613-4.81-8.43-4.209C3.408 45.021 1 43.217 1 41.414c0-1.804 1.204-3.006 3.613-3.608 2.409-.6 11.442-3.005 17.464-1.202 6.021 1.804 5.42 1.804 7.226 2.405 1.806.601 1.806-.601 1.204-1.804-.602-1.202-1.806-4.809-2.409-7.815-.602-3.006 0-6.012 0-6.012"/>
     </svg>
-
 </div>
 {% endblock animation %}
 
 {% block main %}
 <div class="main-container">
+
     <div class="message">
         <p class="caption title-font">{{ message.caption }}</p>
         <p class="text text-font">{{ message.text }}</p>
     </div>
-    <div class="categories-container">
-        <p>history-container</p>
-        <p>trees-container</p>
-        <p>bushes-container</p>
-        <p>herbs-container</p>
+
+    <div class="home-cards">
+
+        <a href="#" class="card">
+            <div class="media-container">
+                <!--img src="{{ url_for('static', path='images/frame-17.png') }}" alt="image" class="media"-->
+                <video class="media" autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', path='video/flyer-3.mp4') }}" type="video/mp4">
+                </video>
+                <div class="text title-font">History</div>
+            </div>
+            <p class="title title-font">History</p>
+            <p class="text text-font">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+        </a>
+
+        <a href="#" class="card">
+            <div class="media-container">
+                <!--img src="{{ url_for('static', path='images/frame-17.png') }}" alt="image" class="media"-->
+                <video class="media" autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', path='video/flyer-2.mp4') }}" type="video/mp4">
+                </video>
+                <div class="text title-font">Trees</div>
+            </div>
+            <p class="title title-font">Trees</p>
+            <p class="text text-font">It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.</p>
+        </a>
+
+        <a href="#" class="card">
+            <div class="media-container">
+                <!--img src="{{ url_for('static', path='images/frame-17.png') }}" alt="image" class="media"-->
+                <video class="media" autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', path='video/flyer-5.mp4') }}" type="video/mp4">
+                </video>
+                <div class="text title-font">Bushes</div>
+            </div>
+            <p class="title title-font">Bushes</p>
+            <p class="text text-font">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        </a>
+
+        <a href="#" class="card">
+            <div class="media-container">
+                <!--img src="{{ url_for('static', path='images/frame-17.png') }}" alt="image" class="media"-->
+                <video class="media" autoplay muted loop playsinline>
+                    <source src="{{ url_for('static', path='video/flyer-4.mp4') }}" type="video/mp4">
+                </video>
+                <div class="text title-font">Herbs</div>
+            </div>
+            <p class="title title-font">Herbs</p>
+            <p class="text text-font">The quick, fat fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.</p>
+        </a>
+
     </div>
+
 </div>
 {% endblock main %}
