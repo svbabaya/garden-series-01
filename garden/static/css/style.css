@@ -46,7 +46,7 @@
     margin: 0 10px 10px 10px;
 }
 .main-container .message {
-    max-width: 300px;
+    max-width: 600px;
     margin-bottom: 20px;
 }
 .main-container .message .caption {
@@ -58,10 +58,6 @@
     font-size: 18px;
     line-height: 1.2;
     color: black;
-}
-
-.footer-container {
-    margin: 0 10px;
 }
 
 /* Logo */
@@ -145,7 +141,7 @@ input:checked ~ label span:nth-child(3) {
     display: none;
 }
 
-/* Responsiveness */
+/* Responsiveness menu*/
 @media (max-width: 890px) {
     nav {
         position: absolute;
@@ -165,6 +161,9 @@ input:checked ~ label span:nth-child(3) {
     #menu:checked ~ nav {
         display: initial;
     }
+    .main-container .message {
+        max-width: 300px;
+    }
 }
 
 /* Home animation */
@@ -177,7 +176,6 @@ input:checked ~ label span:nth-child(3) {
     stroke-dashoffset: 1000;
     animation: draw 4s ease-in-out forwards;
 }
-
 @keyframes draw {
     to { stroke-dashoffset: 0; }
 }
@@ -188,12 +186,21 @@ input:checked ~ label span:nth-child(3) {
     display: grid;
     grid-template-columns: 1fr;
     gap: 15px;
-    max-width: 740px;
     margin: 0 auto;
 }
 @media (min-width: 740px) {
     .home-cards {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+@media (min-width: 1400px) {
+    .home-cards {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+@media (min-width: 2000px) {
+    .home-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
 .card {
@@ -228,7 +235,47 @@ input:checked ~ label span:nth-child(3) {
     margin-bottom: 5px;
 }
 .card .text {
-    font-size: 12px;
+    font-size: 14px;
     color: #000;
     line-height: 1.2;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #efefef;
+    height: 300px;
+}
+.footer-main {
+    margin: 0 10px;
+}
+.footer-final {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    height: 60px;
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+.marquee span {
+    display: inline-block;
+    animation: marquee 50s ease-in-out infinite;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 0.5em;
+    padding-left: 100%;
+    text-transform: uppercase;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
