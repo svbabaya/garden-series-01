@@ -68,6 +68,18 @@ body {
     line-height: 1.2;
     color: black;
 }
+.main-container .title {
+    font-size: 20px;
+}
+.main-container .auther {
+    font-size: 14px;
+}
+.main-container .date {
+    font-size: 14px;
+}
+.main-container .content {
+    font-size: 16px;
+}
 
 /* Logo */
 .logo {
@@ -114,8 +126,7 @@ nav ul li a {
     padding: 20px 15px;
 }
 nav ul li a:hover {
-    background: #000;
-    color: #fff;
+    color: #bfbfbf;
 }
 
 /* Menu Icon */
