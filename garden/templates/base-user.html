@@ -8,7 +8,10 @@ School 30 garden portal homepage
 <div class="header-container">
     <a href="{{ url_for('home') }}" class="logo logo-font ">
         <span class="logo-name">GARDEN</span>
-        <span class="logo-number">/30</span>
+        <div class="logo-number">
+            <span class="mobile">/30</span>
+            <span class="desktop">school 30</span>
+        </div>
     </a>
     <input type="checkbox" name="menu" id="menu"/>
     <label class="menu" for="menu">
@@ -18,12 +21,13 @@ School 30 garden portal homepage
     </label>
     <nav class="title-font">
         <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
+            <li><a href="{{ url_for('home') }}">home</a></li>
             <li><a href="#">history</a></li>
-            <li><a href="#">plants</a></li>
-            <li><a href="#">help</a></li>
-            <li><a href="#">contacts</a></li>
+            <li><a href="#">search</a></li>
+            <li><a href="#">art</a></li>
+            <li><a href="#">sight</a></li>
+            <li><a href="#">ideas</a></li>
+            <li><a href="#">details</a></li>
         </ul>
     </nav>
 </div>
@@ -37,7 +41,7 @@ School 30 garden portal homepage
 </div>
 <div class="footer-final">
     <div class="marquee text-font">
-        <span>Humpty Dumpty sat on a wall. Humpty Dumpty had a great fall. All the king's horses and all the king's men couldn't put Humpty together again.</span>
+        <span>Humpty Dumpty sat on a wall. Humpty Dumpty had a great fall. All the king's horses and all the king's men couldn't put Humpty together again. Disclaimer: All images and videos are natural and obtained without the use of AI.</span>
     </div>
 </div>
 {% endblock footer %}
