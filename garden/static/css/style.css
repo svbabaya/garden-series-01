@@ -51,7 +51,7 @@ body {
     flex: 0 0 auto;
 }
 .main-container {
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 20px 10px;
 }
 .main-container .message {
     max-width: 600px;
@@ -202,30 +202,22 @@ input:checked ~ label span:nth-child(3) {
 
 /* Cards */
 .home-cards {
-    width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 15px;
-    margin: 0 auto;
+    gap: 20px;
 }
-@media (min-width: 740px) {
+@media (max-width: 767px) {
     .home-cards {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
     }
 }
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
     .home-cards {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-}
-@media (min-width: 2000px) {
-    .home-cards {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 .card {
-    display: block;
-    padding-bottom: 10px;
+    width: 100%;
+    min-width: 0;
 }
 .card .media-container {
     position: relative;
