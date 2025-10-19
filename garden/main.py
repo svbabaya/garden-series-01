@@ -52,7 +52,12 @@ main_app.include_router(
     tags=settings.tags.view_home,
     responses={404: {"description": "Not found"}},
 )
-
+main_app.include_router(
+    view_user,
+    deprecated=False,
+    tags=settings.tags.view_user,
+    responses={404: {"description": "Not found"}},
+)
 
 if __name__ == "__main__":
     uvicorn.run(
