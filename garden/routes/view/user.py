@@ -4,17 +4,19 @@ from utils.templates import templates
 
 router = APIRouter()
 
-# @router.get("/plants")
-# async def get_all_plants():
-#
-#
-# @router.get("/{category_id}")
-# async def get_category(category_id: int):
-#
-#
-# @router.get("/{category_id}/{plant_id}")
-# async def get_plant(category_id: int, plant_id: int):
+@router.get("/category", name="category")
+async def category(request: Request):
+    return templates.TemplateResponse(
+        name="user/category.html",
+        context={"request": request}
+    )
 
+@router.get("/plant", name="plant")
+async def plant(request: Request):
+    return templates.TemplateResponse(
+        name="user/plant.html",
+        context={"request": request}
+    )
 
 @router.get("/history", name="history")
 async def history(request: Request):

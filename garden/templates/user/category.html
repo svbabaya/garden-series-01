@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base-user.html' %}
 
-</body>
-</html>
+{% block main %}
+<div class="main-container">
+    <div class="title title-font">
+        <span>Name of category</span>
+    </div>
+    <div class="auther text-font">
+        <span>Creator</span>
+    </div>
+    <div class="date text-font">
+        <span>2025-11-01</span>
+    </div>
+    <div class="content text-font">
+        <span>The cards of trees...</span>
+    </div>
+</div>
+{% endblock main %}
