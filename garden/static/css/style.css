@@ -4,7 +4,11 @@
     //--nav-grey: #85888c;
 }
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     min-width: 340px;
+    line-height: 1.2;
 }
 .logo-font {
   font-family: "Montserrat Alternates", sans-serif;
@@ -24,10 +28,8 @@ body {
   font-style: normal;
 }
 
-.site {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+header {
+   flex-shrink: 0;
 }
 .header-container {
     position: sticky;
@@ -41,7 +43,11 @@ body {
     margin-bottom: 10px;
     z-index: 100;
 }
-.animation-container {
+
+.visual {
+    flex-shrink: 0;
+}
+.visual-container {
     height: 90px;
     background-color: #fff;
     display: flex;
@@ -49,8 +55,8 @@ body {
     align-items: center;
 }
 
-.main {
-    flex: 0 0 auto;
+main {
+    flex-shrink: 0;
 }
 .main-container {
     margin: 0 10px 20px 10px;
@@ -66,7 +72,6 @@ body {
 }
 .main-container .message .text {
     font-size: 18px;
-    line-height: 1.2;
     color: black;
 }
 .main-container .title {
@@ -269,32 +274,27 @@ input:checked ~ label span:nth-child(3) {
 .card .text {
     font-size: 14px;
     color: #000;
-    line-height: 1.2;
 }
 
 /* Footer */
-.footer {
-    flex: 1;
+footer {
     display: flex;
     flex-direction: column;
-    background-color: #efefef;
-    min-height: 200px;
+    margin-top: auto;
+    flex: 1;
+    background: #efefef;
 }
 .footer-main {
     margin: 0 10px;
-    flex: 1;
-}
-.footer-final {
-    display: flex;
-    align-items: center;
-    background-color: #000;
-    height: 60px;
     flex-shrink: 0;
 }
-.marquee {
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
+.footer-tape {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    min-height: 60px;
 }
 .marquee span {
     display: inline-block;
