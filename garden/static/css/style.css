@@ -292,24 +292,31 @@ footer {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #000;
+    background-color: #707070;
     min-height: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 .marquee span {
     display: inline-block;
-    animation: marquee 50s ease-in-out infinite;
+    animation: marquee 200s linear infinite;
     color: #fff;
-    font-size: 16px;
     letter-spacing: 0.5em;
     padding-left: 100%;
     text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 200;
+    font-size: 5vh;
+    animation-delay: 1s;
 }
 @keyframes marquee {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(0); }
+    99% { transform: translateX(-100%); }
+    100% { transform: translateX(-100%); }
 }
