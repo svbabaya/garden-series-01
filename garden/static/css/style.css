@@ -305,7 +305,7 @@ footer {
 }
 .marquee span {
     display: inline-block;
-    animation: marquee 200s linear infinite;
+    animation: marquee 300s linear infinite;
     color: #fff;
     letter-spacing: 0.5em;
     padding-left: 100%;
