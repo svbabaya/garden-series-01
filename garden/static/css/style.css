@@ -206,7 +206,7 @@ input:checked ~ label span:nth-child(3) {
 }
 
 /* Home animation */
-.drawing-svg path {
+.drawing-home path {
     stroke: #000;
     stroke-linecap: round;
     fill: none;
@@ -214,6 +214,69 @@ input:checked ~ label span:nth-child(3) {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: draw 4s ease-in-out forwards;
+}
+.drawing-history path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s ease-in-out forwards;
+}
+.drawing-details path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 4s ease-in-out forwards;
+}
+.drawing-category path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 20s ease-in-out forwards;
+}
+.drawing-art path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 10s ease-in-out forwards;
+}
+.drawing-ideas path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 10s ease-in-out forwards;
+}
+.drawing-plant path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 10s ease-in-out forwards;
+}
+.drawing-search path {
+    stroke: #000;
+    stroke-linecap: round;
+    fill: none;
+    stroke-width: 1px;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 6s ease-in-out forwards;
 }
 @keyframes draw {
     to { stroke-dashoffset: 0; }
