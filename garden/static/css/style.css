@@ -390,6 +390,9 @@ footer {
     margin: 20px 10px;
     flex-shrink: 0;
     font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .footer-tape {
     flex: 1;
