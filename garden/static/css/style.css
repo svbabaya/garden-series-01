@@ -418,7 +418,7 @@ footer {
     text-transform: uppercase;
     white-space: nowrap;
     font-weight: 200;
-    font-size: 5vh;
+    font-size: var(--font-size-from-footer, 20px);
     animation-delay: 1s;
 }
 @keyframes marquee {

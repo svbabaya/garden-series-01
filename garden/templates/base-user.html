@@ -51,9 +51,13 @@ School 30 garden portal homepage
     <span>2025, {svbabaya}</span>
     <span>Version: english</span>
 </div>
-<div class="footer-tape">
+<div class="footer-tape" id="footerTape">
     <div class="marquee text-font">
-        <span>Disclaimer: All images and videos are natural and obtained without the use of AI.</span>
+        <span>All images and videos are natural and obtained without the use of AI.</span>
     </div>
 </div>
 {% endblock footer %}
+
+{% block js %}
+    <script src="{{ url_for('static', path='js/font-size-adjust.js') }}"></script>
+{% endblock js %}
