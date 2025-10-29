@@ -119,8 +119,15 @@ main {
 
 /* Nav menu */
 nav {
-    text-transform: capitalize;
+    //text-transform: capitalize;
     font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+nav ul {
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-bottom: 30px;
 }
 nav ul li {
     position: relative;
@@ -133,6 +140,13 @@ nav ul li a {
 }
 nav ul li a:hover {
     color: #bfbfbf;
+}
+.nav-footer {
+    background-color: #efefef;
+    color: #000;
+    width: 100%;
+    display: none;
+    flex-grow: 1;
 }
 
 /* Menu Icon */
@@ -179,8 +193,18 @@ input:checked ~ label span:nth-child(3) {
     display: none;
 }
 
-/* Responsiveness menu*/
-@media (max-width: 940px) {
+/* Desktop */
+@media (min-width: 940px) {
+    nav ul li {
+        width: auto;
+    }
+    .nav-footer {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 939px) {
     nav {
         position: absolute;
         top: 100%;
@@ -191,15 +215,21 @@ input:checked ~ label span:nth-child(3) {
         border-top: 1px solid rgba(0,0,0,.1);
         display: none;
         overflow-y: auto;
+        flex-direction: column;
+    }
+    nav ul {
+        flex-shrink: 0;
+        width: 100%;
     }
     nav ul li {
         width: 100%;
+        float: none;
     }
     .header-container .menu {
         display: initial;
     }
     #menu:checked ~ nav {
-        display: block;
+        display: flex;
     }
     body:has(#menu:checked) {
         overflow: hidden;
@@ -212,6 +242,9 @@ input:checked ~ label span:nth-child(3) {
 
     .main-container .message {
         max-width: 300px;
+    }
+    .nav-footer {
+        display: block;
     }
 }
 
