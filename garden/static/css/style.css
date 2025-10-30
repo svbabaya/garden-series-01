@@ -240,9 +240,6 @@ input:checked ~ label span:nth-child(3) {
         overflow: hidden;
     }
 
-    .main-container .message {
-        max-width: 300px;
-    }
     .nav-footer {
         display: block;
     }
