@@ -119,12 +119,12 @@ main {
 
 /* Nav menu */
 nav {
-    //text-transform: capitalize;
     font-size: 15px;
     display: flex;
     flex-direction: column;
 }
 nav ul {
+    text-transform: capitalize;
     overflow: hidden;
     flex-shrink: 0;
     margin-bottom: 30px;
@@ -152,8 +152,8 @@ nav ul li a:hover {
 /* Menu Icon */
 .menu {
     position: relative;
-    width: 24px;
-    height: 20px;
+    width: 22px;
+    height: 12px;
     background: transparent;
     cursor: pointer;
 }
@@ -174,6 +174,7 @@ input[type=checkbox] {
 .menu span:nth-child(2) {
     top: 50%;
     transform: translateY(-50%);
+    display: none;
 }
 .menu span:nth-child(3) {
     top: 100%;
@@ -183,8 +184,7 @@ input:checked ~ label span:nth-child(1) {
     opacity: 0;
 }
 input:checked ~ label span:nth-child(2) {
-    transition: all 0.3s ease;
-    height: 3px;
+    display: block;
 }
 input:checked ~ label span:nth-child(3) {
     opacity: 0;
