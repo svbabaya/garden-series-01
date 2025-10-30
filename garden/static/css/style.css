@@ -429,7 +429,8 @@ input:checked ~ label span:nth-child(3) {
     width: 260px;
     height: 40px;
     border-radius: 5px;
-    border: 1px solid #000;
+    border: 1px solid #909090;
+    color: #909090;
     background: transparent;
     font-size: var(--fs-small);
     cursor: pointer;
@@ -437,7 +438,8 @@ input:checked ~ label span:nth-child(3) {
     align-self: flex-start;
 }
 .feedback-btn:hover {
-
+    border-color: #000000;
+    color: #000000;
 }
 .feedback-btn:active {
     transform: scale(0.95);
