@@ -200,8 +200,27 @@ input:checked ~ label span:nth-child(3) {
 
 /* Desktop */
 @media (min-width: 940px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+    }
+    nav ul {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        height: 100%;
+    }
     nav ul li {
-        width: auto;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    nav ul li a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 15px;
     }
     .nav-footer {
         display: none;
