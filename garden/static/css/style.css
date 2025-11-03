@@ -517,8 +517,8 @@ footer {
 .modal-content {
     position: relative;
     background: white;
-    margin: 50px auto;
-    padding: 30px;
+    margin: 30px auto;
+    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     max-width: 500px;
@@ -564,7 +564,7 @@ footer {
 }
 .form-group input,
 .form-group textarea {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     transition: border-color 0.3s ease;
