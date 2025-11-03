@@ -266,6 +266,10 @@ input:checked ~ label span:nth-child(3) {
 
     .nav-footer {
         display: block;
+        background-image: url('../images/menu_bg_03.svg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: auto;
     }
 }
 
