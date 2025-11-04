@@ -39,7 +39,7 @@ feedbackForm.addEventListener('submit', (e) => {
     console.log('Form data:', data);
 
     // Success message
-    alert('Message sent');
+    // alert('Message sent');
 
     // Close modal and reset form
     closeModal();
