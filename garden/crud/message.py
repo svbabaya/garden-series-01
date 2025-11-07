@@ -47,7 +47,8 @@ async def create_message(session: AsyncSession, message_in: MessageCreate) -> Me
 
 async def no_messages_to_display(session: AsyncSession) -> bool:
     query = (
-        select(Message)
+        select(func.count())
+        .select_from(Message)
         .where(Message.is_displayed == True, Message.is_active == True)
     )
     result = await session.execute(query)
