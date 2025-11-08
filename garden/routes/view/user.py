@@ -25,6 +25,13 @@ async def history(request: Request):
         context={"request": request}
     )
 
+@router.get("/communication", name="communication")
+async def communication(request: Request):
+    return templates.TemplateResponse(
+        name="user/communication.html",
+        context={"request": request}
+    )
+
 @router.get("/search", name="search")
 async def about(request: Request):
     return templates.TemplateResponse(
