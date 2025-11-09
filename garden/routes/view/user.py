@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Request, Depends
-from typing import Annotated
+from fastapi import APIRouter, Request
 from utils.templates import templates
+
+from utils.translation import translation_service, get_user_language
 
 router = APIRouter()
 

@@ -7,18 +7,25 @@ School 30 garden portal homepage
 {% block header %}
 <div class="header-container">
     <a href="{{ url_for('home') }}" class="logo logo-font ">
-        <span class="logo-name">GARDEN</span>
+        <span class="logo-name">{{ translations.logo_name }}</span>
         <div class="logo-number">
             <span class="mobile">/30</span>
             <span class="desktop">school 30</span>
         </div>
     </a>
+<!--    <div class="language-switcher title-font">-->
+<!--        <a href="javascript:void(0)"-->
+<!--           onclick="switchLanguage('{{ 'ru' if current_language == 'en' else 'en' }}')"-->
+<!--           class="language-link">{{ 'ru' if current_language == 'en' else 'en' }}-->
+<!--        </a>-->
+<!--    </div>-->
     <input type="checkbox" name="menu" id="menu"/>
     <label class="menu" for="menu">
         <span></span>
         <span></span>
         <span></span>
     </label>
+
     <nav class="title-font">
         <ul>
             <li><a href="{{ url_for('home') }}">home</a></li>
@@ -28,6 +35,12 @@ School 30 garden portal homepage
             <li><a href="{{ url_for('art') }}">art</a></li>
             <li><a href="{{ url_for('ideas') }}">ideas</a></li>
             <li><a href="{{ url_for('details') }}">details</a></li>
+            <li>
+                <a href="javascript:void(0)"
+                onclick="switchLanguage('{{ 'ru' if current_language == 'en' else 'en' }}')">
+                    {{ 'ru' if current_language == 'en' else 'en' }}
+                </a>
+            </li>
         </ul>
         <div class="nav-footer">
             <div class="footer-main text-font">
@@ -90,5 +103,9 @@ School 30 garden portal homepage
     <script src="{{ url_for('static', path='js/font-size-adjust.js') }}"></script>
     <script src="{{ url_for('static', path='js/menu-control.js') }}"></script>
     <script src="{{ url_for('static', path='js/feedback-modal.js') }}"></script>
-
+    <script>
+        function switchLanguage(lang) {
+            window.location.href = `/switch/${lang}`;
+        }
+    </script>
 {% endblock js %}
