@@ -2,7 +2,7 @@
   --fs-small: 0.875rem;     /* 14px */
   --fs-base: 1rem;          /* 16px */
   --fs-large: 1.125rem;     /* 18px */
-  --fs-h-small: 0.75rem;    /* 12px */
+  //--fs-h-small: 0.75rem;    /* 12px */
   --fs-h-base: 1.25rem;     /* 20px */
   --fs-h-large: 1.75rem;    /* 28px */
   --fs-logo: 2.875rem;      /* 46px */
@@ -74,19 +74,19 @@ main {
     margin-bottom: 30px;
 }
 .main-container .message .caption {
-    font-size: var(--fs-h-small);
+    font-size: var(--fs-base);
     color: #bfbfbf;
     margin-bottom: 5px;
 }
 .main-container .message .text {
-    font-size: var(--fs-large);
+    font-size: var(--fs-h-base);
     color: black;
 }
 .main-container .title {
     font-size: var(--fs-h-base);
 }
 .main-container .info {
-    font-size: var(--fs-small);
+    font-size: var(--fs-base);
 }
 .main-container .content {
     font-size: var(--fs-base);
@@ -108,7 +108,7 @@ main {
 .logo-number {
     display: inline-block;
     color: #000;
-    font-size: var(--fs-base);
+    font-size: var(--fs-small);
     font-weight: 300;
 }
 .desktop {
@@ -267,10 +267,10 @@ input:checked ~ label span:nth-child(3) {
 
     .nav-footer {
         display: block;
-        background-image: url('../images/menu_bg_101.svg');
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-size: auto;
+        //background-image: url('../images/menu_bg_102.svg');
+        //background-repeat: no-repeat;
+        //background-position: left bottom 20px;
+        //background-size: auto;
     }
 }
 
@@ -398,14 +398,16 @@ input:checked ~ label span:nth-child(3) {
     font-size: var(--fs-h-large);
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-transform: capitalize;
 }
 .card .title {
-    font-size: var(--fs-h-small);
+    font-size: var(--fs-base);
     color: #bfbfbf;
     margin-bottom: 5px;
+    text-transform: capitalize;
 }
 .card .text {
-    font-size: var(--fs-small);
+    font-size: var(--fs-base);
     color: #000;
 }
 
@@ -425,7 +427,7 @@ input:checked ~ label span:nth-child(3) {
     align-items: flex-start;
 }
 .feedback-main span {
-    font-size: var(--fs-large);
+    font-size: var(--fs-h-base);
     margin-bottom: 15px;
     text-align: left;
     width: 100%;
@@ -433,8 +435,8 @@ input:checked ~ label span:nth-child(3) {
 .feedback-btn,
 .submit-btn {
     border-radius: 5px;
-    border: 1px solid #909090;
-    color: #909090;
+    border: 1px solid #000;
+    color: #000;
     background: transparent;
     font-size: var(--fs-small);
     cursor: pointer;
@@ -444,8 +446,8 @@ input:checked ~ label span:nth-child(3) {
 }
 .feedback-btn:hover,
 .submit-btn:hover {
-    border-color: #000000;
-    color: #000000;
+    border-color: #bfbfbf;
+    color: #bfbfbf;
 }
 .feedback-btn:active,
 .submit-btn:active {

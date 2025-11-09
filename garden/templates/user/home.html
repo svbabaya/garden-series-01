@@ -22,10 +22,10 @@
                 <video class="media" autoplay muted loop playsinline>
                     <source src="{{ url_for('static', path='video/flyer-202c.mp4') }}" type="video/mp4">
                 </video>
-                <div class="text title-font">Newcomer</div>
+                <div class="text title-font">{{ translations.newcomer_name }}</div>
             </div>
-            <p class="title title-font">Newcomer</p>
-            <p class="text text-font">What I need is the dandelion in the spring. The bright yellow that means rebirth instead of destruction. The promise that life can go on, no matter how bad our losses. That it can be good again.</p>
+            <p class="title title-font">{{ translations.newcomer_name }}</p>
+            <p class="text text-font">{{ translations.newcomer_caption }}</p>
         </a>
 
         <a href="{{ url_for('history') }}" class="card">
@@ -34,10 +34,10 @@
                 <video class="media" autoplay muted loop playsinline>
                     <source src="{{ url_for('static', path='video/flyer-103c.mp4') }}" type="video/mp4">
                 </video>
-                <div class="text title-font">History</div>
+                <div class="text title-font">{{ translations.history }}</div>
             </div>
-            <p class="title title-font">History</p>
-            <p class="text text-font">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
+            <p class="title title-font">{{ translations.history }}</p>
+            <p class="text text-font">{{ translations.history_caption }}</p>
         </a>
 
         <a href="{{ url_for('category') }}" class="card">
@@ -46,10 +46,10 @@
                 <video class="media" autoplay muted loop playsinline>
                     <source src="{{ url_for('static', path='video/flyer-301c.mp4') }}" type="video/mp4">
                 </video>
-                <div class="text title-font">Trees</div>
+                <div class="text title-font">{{ translations.trees_name }}</div>
             </div>
-            <p class="title title-font">Trees</p>
-            <p class="text text-font">It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.</p>
+            <p class="title title-font">{{ translations.trees_name }}</p>
+            <p class="text text-font">{{ translations.trees_caption }}</p>
         </a>
 
         <a href="{{ url_for('category') }}" class="card">
@@ -58,10 +58,10 @@
                 <video class="media" autoplay muted loop playsinline>
                     <source src="{{ url_for('static', path='video/flyer-105c.mp4') }}" type="video/mp4">
                 </video>
-                <div class="text title-font">Bushes</div>
+                <div class="text title-font">{{ translations.bushes_name }}</div>
             </div>
-            <p class="title title-font">Bushes</p>
-            <p class="text text-font">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p class="title title-font">{{ translations.bushes_name }}</p>
+            <p class="text text-font">{{ translations.bushes_caption }}</p>
         </a>
 
         <a href="{{ url_for('category') }}" class="card">
@@ -70,10 +70,10 @@
                 <video class="media" autoplay muted loop playsinline>
                     <source src="{{ url_for('static', path='video/flyer-204c.mp4') }}" type="video/mp4">
                 </video>
-                <div class="text title-font">Herbs</div>
+                <div class="text title-font">{{ translations.herbs_name }}</div>
             </div>
-            <p class="title title-font">Herbs</p>
-            <p class="text text-font">The quick, fat fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog.</p>
+            <p class="title title-font">{{ translations.herbs_name }}</p>
+            <p class="text text-font">{{ translations.herbs_caption }}</p>
         </a>
 
         <a href="{{ url_for('art') }}" class="card">
@@ -82,10 +82,10 @@
 <!--                <video class="media" autoplay muted loop playsinline>-->
 <!--                    <source src="{{ url_for('static', path='video/flyer-204c.mp4') }}" type="video/mp4">-->
 <!--                </video>-->
-                <div class="text title-font">Art</div>
+                <div class="text title-font">{{ translations.art }}</div>
             </div>
-            <p class="title title-font">Art</p>
-            <p class="text text-font">All gardening is landscape painting. Alexander Pope</p>
+            <p class="title title-font">{{ translations.art }}</p>
+            <p class="text text-font">{{ translations.art_caption }}</p>
         </a>
 
     </div>

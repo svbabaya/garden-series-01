@@ -10,15 +10,9 @@ School 30 garden portal homepage
         <span class="logo-name">{{ translations.logo_name }}</span>
         <div class="logo-number">
             <span class="mobile">/30</span>
-            <span class="desktop">school 30</span>
+            <span class="desktop">{{ translations.logo_number_desktop }}</span>
         </div>
     </a>
-<!--    <div class="language-switcher title-font">-->
-<!--        <a href="javascript:void(0)"-->
-<!--           onclick="switchLanguage('{{ 'ru' if current_language == 'en' else 'en' }}')"-->
-<!--           class="language-link">{{ 'ru' if current_language == 'en' else 'en' }}-->
-<!--        </a>-->
-<!--    </div>-->
     <input type="checkbox" name="menu" id="menu"/>
     <label class="menu" for="menu">
         <span></span>
@@ -28,13 +22,13 @@ School 30 garden portal homepage
 
     <nav class="title-font">
         <ul>
-            <li><a href="{{ url_for('home') }}">home</a></li>
-            <li><a href="{{ url_for('communication') }}">communication</a></li>
-            <li><a href="{{ url_for('history') }}">history</a></li>
-            <li><a href="{{ url_for('search') }}">search</a></li>
-            <li><a href="{{ url_for('art') }}">art</a></li>
-            <li><a href="{{ url_for('ideas') }}">ideas</a></li>
-            <li><a href="{{ url_for('details') }}">details</a></li>
+            <li><a href="{{ url_for('home') }}">{{ translations.home }}</a></li>
+            <li><a href="{{ url_for('communication') }}">{{ translations.communications }}</a></li>
+            <li><a href="{{ url_for('history') }}">{{ translations.history }}</a></li>
+            <li><a href="{{ url_for('search') }}">{{ translations.search }}</a></li>
+            <li><a href="{{ url_for('art') }}">{{ translations.art }}</a></li>
+            <li><a href="{{ url_for('ideas') }}">{{ translations.ideas }}</a></li>
+            <li><a href="{{ url_for('details') }}">{{ translations.details }}</a></li>
             <li>
                 <a href="javascript:void(0)"
                 onclick="switchLanguage('{{ 'ru' if current_language == 'en' else 'en' }}')">
@@ -45,7 +39,7 @@ School 30 garden portal homepage
         <div class="nav-footer">
             <div class="footer-main text-font">
                 <span>2025, {svbabaya}</span>
-                <span>Version english</span>
+                <span>Version {{ 'english' if current_language == 'en' else 'russian' }}</span>
             </div>
         </div>
     </nav>
@@ -61,19 +55,19 @@ School 30 garden portal homepage
 
 {% block feedback %}
 <div class="feedback-main text-font">
-    <span>Tell us what you liked about this portal, what you didn't. Or maybe you have any ideas on how to make it better?</span>
-    <button class="feedback-btn">Click me and see what happens</button>
+    <span>{{ translations.feedback_welcome }}</span>
+    <button class="feedback-btn">{{ translations.feedback_button }}</button>
 </div>
 {% endblock feedback %}
 
 {% block footer %}
 <div class="footer-main text-font">
     <span>2025, {svbabaya}</span>
-    <span>Version english</span>
+    <span>Version {{ 'english' if current_language == 'en' else 'russian' }}</span>
 </div>
 <div class="footer-tape" id="footerTape">
     <div class="marquee text-font">
-        <span>All images and videos are natural and obtained without the use of AI.</span>
+        <span>{{ translations.footer_notification }}</span>
     </div>
 </div>
 {% endblock footer %}
@@ -83,17 +77,17 @@ School 30 garden portal homepage
     <div class="modal-overlay"></div>
     <div class="modal-content">
         <button class="modal-close">&times;</button>
-        <h2 class="title-font">Feedback</h2>
+        <h2 class="title-font">{{ translations.feedback_modal_title }}</h2>
         <form class="feedback-form text-font">
             <div class="form-group">
-                <label for="name">Please introduce yourself</label>
+                <label for="name">{{ translations.feedback_modal_name }}</label>
                 <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="message">Share your thoughts</label>
+                <label for="message">{{ translations.feedback_modal_message }}</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send</button>
+            <button type="submit" class="submit-btn">{{ translations.feedback_modal_submit }}</button>
         </form>
     </div>
 </div>
