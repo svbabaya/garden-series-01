@@ -58,7 +58,7 @@ async def communication(request: Request):
     )
 
 @router.get("/search", name="search")
-async def about(request: Request):
+async def search(request: Request):
     language = get_user_language(request)
     translations = translation_service.get_all_translations(language)
     return templates.TemplateResponse(
@@ -71,7 +71,7 @@ async def about(request: Request):
     )
 
 @router.get("/art", name="art")
-async def about(request: Request):
+async def art(request: Request):
     language = get_user_language(request)
     translations = translation_service.get_all_translations(language)
     return templates.TemplateResponse(
@@ -83,12 +83,12 @@ async def about(request: Request):
         }
     )
 
-@router.get("/ideas", name="ideas")
-async def about(request: Request):
+@router.get("/glade", name="glade")
+async def glade(request: Request):
     language = get_user_language(request)
     translations = translation_service.get_all_translations(language)
     return templates.TemplateResponse(
-        name="user/ideas.html",
+        name="user/glade.html",
         context={
             "request": request,
             "translations": translations,
@@ -97,7 +97,7 @@ async def about(request: Request):
     )
 
 @router.get("/details", name="details")
-async def about(request: Request):
+async def details(request: Request):
     language = get_user_language(request)
     translations = translation_service.get_all_translations(language)
     return templates.TemplateResponse(
