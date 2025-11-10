@@ -2,7 +2,7 @@
   "logo_name": "сад",
   "logo_number_desktop": "СКОШИ № 30",
   "home": "домой",
-  "communications": "общение",
+  "communication": "общение",
   "history": "история",
   "search": "поиск",
   "art": "искусство",
@@ -21,8 +21,18 @@
   "trees_caption": "",
   "bushes_name": "кустарники",
   "bushes_caption": "",
-  "herbs_name": "Травянистые",
+  "herbs_name": "травянистые",
   "herbs_caption": "",
   "history_caption": "",
-  "art_caption": ""
+  "art_caption": "",
+  "art_article_about": "",
+  "art_article_content": "Тема сада в искусстве невероятно обширна и отражает изменение представлений человека о природе, рае, красоте и своем месте в мире.",
+  "category_name": "деревья или кустарники или травянистые",
+  "category_article_about": "",
+  "category_article_content": "Список всех деревьев или кустарников или травянистых.",
+  "communication_article_about": "",
+  "communication_article_content": "Задавайте вопросы, оставляйте отзывы, общайтесь. Будьте на связи!",
+
+  "message_caption": "Конфуций",
+  "message_text": "Я покупаю рис, чтобы жить, а цветы – чтобы у меня была причина жить"
 }

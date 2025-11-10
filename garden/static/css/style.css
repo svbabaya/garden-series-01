@@ -2,7 +2,6 @@
   --fs-small: 0.875rem;     /* 14px */
   --fs-base: 1rem;          /* 16px */
   --fs-large: 1.125rem;     /* 18px */
-  //--fs-h-small: 0.75rem;    /* 12px */
   --fs-h-base: 1.25rem;     /* 20px */
   --fs-h-large: 1.75rem;    /* 28px */
   --fs-logo: 2.875rem;      /* 46px */
@@ -84,12 +83,15 @@ main {
 }
 .main-container .title {
     font-size: var(--fs-h-base);
+    text-transform: capitalize;
+    margin-bottom: 10px;
 }
-.main-container .info {
+.main-container .about {
     font-size: var(--fs-base);
 }
 .main-container .content {
     font-size: var(--fs-base);
+    margin-bottom: 10px;
 }
 
 /* Logo */

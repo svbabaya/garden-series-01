@@ -2,7 +2,7 @@
   "logo_name": "garden",
   "logo_number_desktop": "SСGEBS No. 30",
   "home": "home",
-  "communications": "communications",
+  "communication": "communication",
   "history": "history",
   "search": "search",
   "art": "art",
@@ -24,5 +24,16 @@
   "herbs_name": "herbs",
   "herbs_caption": "",
   "history_caption": "",
-  "art_caption": "All gardening is landscape painting. Alexander Pope"
+  "art_caption": "All gardening is landscape painting. Alexander Pope",
+  "art_article_about": "",
+  "art_article_content": "The theme of the garden in art is incredibly broad and reflects changing human ideas about nature, paradise, beauty, and one's place in the world.",
+  "category_name": "trees or bushes or herbs",
+  "category_article_about": "",
+  "category_article_content": "A list of all trees or shrubs or herbaceous plants.",
+  "communication_article_about": "",
+  "communication_article_content": "Ask question, feedback, chat. Be in touch!",
+
+
+  "message_caption": "Confucius",
+  "message_text": "Rice keeps me alive, but flowers give me a reason to stay alive"
 }
